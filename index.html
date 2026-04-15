@@ -3,82 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eco-Education System</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
-        h1 { color: #4CAF50; }
-        .module { margin-bottom: 30px; border: 1px solid #ccc; padding: 10px; border-radius: 5px; }
-        .module h2 { color: #333; }
-        .test-question { margin-top: 10px; }
-        .admin-panel { margin-top: 20px; border: 1px solid #ccc; padding: 10px; border-radius: 5px; background-color: #f9f9f9; }
-    </style>
+    <title>Eco-Education System PRO v6.0</title>
+    <script>
+        // Eco-Education System JavaScript Implementation
+        const moduleData = [
+            { title: 'Module 1: Introduction to Kazakhstan Ecology', content: 'Details about the Kazakhstan ecology...' },
+            { title: 'Module 2: Flora and Fauna', content: 'Information about plants and animals...' },
+            { title: 'Module 3: Environmental Issues', content: 'Discussion on current environmental problems...' },
+            { title: 'Module 4: Conservation Efforts', content: 'Overview of conservation projects...' },
+            { title: 'Module 5: Sustainable Practices', content: 'Guide on sustainable living...' },
+            { title: 'Module 6: Interactive Features', content: 'Engaging activities and assessments...' }
+        ];
+
+        // Function to display modules
+        function displayModules() {
+            const moduleContainer = document.getElementById('modules');
+            moduleData.forEach(module => {
+                const moduleElement = document.createElement('div');
+                moduleElement.innerHTML = `<h2>${module.title}</h2><p>${module.content}</p>`;
+                moduleContainer.appendChild(moduleElement);
+            });
+        }
+
+        // Function to save progress in localStorage
+        function saveProgress(moduleIndex) {
+            localStorage.setItem(`module${moduleIndex}`, 'completed');
+        }
+
+        window.onload = () => {
+            displayModules();
+        };
+    </script>
 </head>
 <body>
-    <h1>Eco-Education System</h1>
-    <div class="module">
-        <h2>Module 1: Introduction to Kazakhstan Ecology</h2>
-        <p>This module covers the basic concepts of ecology and the unique ecological features of Kazakhstan.</p>
-        <h3>Theory</h3>
-        <p>Kazakhstan is home to diverse ecosystems, including steppes, deserts, mountains, and wetlands. Understanding these systems is crucial for sustainable management.</p>
-        <div class="test-question">
-            <strong>Question 1:</strong> What are the main ecosystems found in Kazakhstan?
-            <input type="text" placeholder="Your answer" />
-        </div>
-    </div>
-    <div class="module">
-        <h2>Module 2: Biodiversity in Kazakhstan</h2>
-        <p>This module focuses on the variety of plant and animal life in Kazakhstan.</p>
-        <h3>Theory</h3>
-        <p>Kazakhstan is rich in biodiversity, hosting numerous endemic species. Conservation efforts are vital to protect these species.</p>
-        <div class="test-question">
-            <strong>Question 1:</strong> Name two endemic species from Kazakhstan.
-            <input type="text" placeholder="Your answer" />
-        </div>
-    </div>
-    <div class="module">
-        <h2>Module 3: Environmental Issues</h2>
-        <p>This module addresses key environmental challenges faced by Kazakhstan.</p>
-        <h3>Theory</h3>
-        <p>Issues like pollution, habitat destruction, and climate change significantly impact Kazakhstan's ecology.</p>
-        <div class="test-question">
-            <strong>Question 1:</strong> What is one major environmental issue facing Kazakhstan?
-            <input type="text" placeholder="Your answer" />
-        </div>
-    </div>
-    <div class="module">
-        <h2>Module 4: Sustainable Practices</h2>
-        <p>This module highlights sustainable practices to protect Kazakhstan's ecosystems.</p>
-        <h3>Theory</h3>
-        <p>Implementing sustainable agriculture and waste management can greatly reduce ecological impact.</p>
-        <div class="test-question">
-            <strong>Question 1:</strong> What is one sustainable practice that can be implemented in Kazakhstan?
-            <input type="text" placeholder="Your answer" />
-        </div>
-    </div>
-    <div class="module">
-        <h2>Module 5: Climate Change and Its Effects</h2>
-        <p>This module examines the impact of climate change on the ecology of Kazakhstan.</p>
-        <h3>Theory</h3>
-        <p>Changing climate patterns are affecting species distribution and ecosystem health.</p>
-        <div class="test-question">
-            <strong>Question 1:</strong> How does climate change affect the ecology of Kazakhstan?
-            <input type="text" placeholder="Your answer" />
-        </div>
-    </div>
-    <div class="module">
-        <h2>Module 6: Community Involvement and Education</h2>
-        <p>This module emphasizes the role of communities in ecological education.</p>
-        <h3>Theory</h3>
-        <p>Engaging the community in ecological education enhances understanding and promotes conservation efforts.</p>
-        <div class="test-question">
-            <strong>Question 1:</strong> Why is community involvement important in ecological education?
-            <input type="text" placeholder="Your answer" />
-        </div>
-    </div>
-    <div class="admin-panel">
-        <h2>Teacher Admin Panel</h2>
-        <p>Teachers can track student progress and manage test questions here.</p>
-        <p>Data persistence will ensure that all student answers and progress are saved for review.</p>
-    </div>
+    <h1>Welcome to the Eco-Education System PRO v6.0</h1>
+    <div id="modules"></div>
+    <footer>
+        <button onclick="saveProgress(1)">Complete Module 1</button>
+        <button onclick="saveProgress(2)">Complete Module 2</button>
+        <button onclick="saveProgress(3)">Complete Module 3</button>
+        <button onclick="saveProgress(4)">Complete Module 4</button>
+        <button onclick="saveProgress(5)">Complete Module 5</button>
+        <button onclick="saveProgress(6)">Complete Module 6</button>
+    </footer>
 </body>
 </html>
